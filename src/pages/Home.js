@@ -19,6 +19,7 @@ const Home = () => {
 
       setData(diaryList.filter((row) => firstDay <= row.date && row.date <= lastDay));
     }
+    console.log('glory - file: Home.js - line 23 - Home - diaryList', diaryList);
   }, [diaryList, curDate]);
 
   const decreaseMonth = () => {

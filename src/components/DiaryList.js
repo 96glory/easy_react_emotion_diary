@@ -49,6 +49,7 @@ const DiaryList = ({ diaryList }) => {
     };
 
     const copyList = JSON.parse(JSON.stringify(diaryList)); // shallow copy
+    console.log('glory - file: DiaryList.js - line 52 - getProcessedDiaryList - copyList', copyList);
 
     const filteredList = filter === 'all' ? copyList : copyList.filter((row) => filterCallBack(row));
 
