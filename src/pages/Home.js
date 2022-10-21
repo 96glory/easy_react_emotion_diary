@@ -1,12 +1,16 @@
 import { useState, useContext, useEffect } from 'react';
 import { DiaryStateContext } from '../App';
-import DiaryList from '../components/DiaryList';
+import { BsFillGrid1X2Fill } from 'react-icons/bs';
 
+import DiaryList from '../components/DiaryList';
 import MyButton from './../components/MyButton';
 import MyHeader from './../components/MyHeader';
+import FloatingButton from '../components/FloatingButton';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const diaryList = useContext(DiaryStateContext);
+  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
   const [curDate, setCurDate] = useState(new Date());
@@ -36,6 +40,12 @@ const Home = () => {
         rightChild={<MyButton text={'>'} onClick={increaseMonth} />}
       />
       <DiaryList diaryList={data} />
+      <FloatingButton
+        icon={<BsFillGrid1X2Fill />}
+        onClick={() => {
+          navigate('/gridTest');
+        }}
+      />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Edit from './pages/Edit';
 import New from './pages/New';
 import Diary from './pages/Diary';
+import GridTest from './pages/GridTest';
 
 const reducer = (state, action) => {
   let newState = [];
@@ -118,6 +119,7 @@ function App() {
               <Route path="/new" element={<New />} />
               <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
+              <Route path="/gridTest" element={<GridTest />} />
             </Routes>
           </div>
         </BrowserRouter>
